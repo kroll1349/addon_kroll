@@ -1,11 +1,13 @@
 {
-  "name": "My Simple Addon",
+  "name": "Kroll Addon",
   "version": "1.0",
-  "slug": "simple_addon",
-  "description": "Un addon simplu pentru Home Assistant",
-  "startup": "application",
+  "slug": "kroll_addon",
+  "description": "Un addon simplu de test.",
+  "startup": "services",
   "boot": "auto",
-  "arch": ["amd64", "armv7", "aarch64"],
+  "hassio_api": true,
+  "host_network": true,
   "options": {},
-  "schema": {}
+  "schema": {},
+  "image": "local/kroll_addon"
 }
