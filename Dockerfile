@@ -11,3 +11,5 @@ RUN chmod +x /run.sh
 
 # Rularea scriptului de start
 CMD ["/run.sh"]
+
+RUN pip3 install requests
