@@ -1,15 +1,7 @@
-FROM homeassistant/amd64-base:latest
+ARG BUILD_FROM=ghcr.io/hassio-addons/base:13.2.0
+FROM ${BUILD_FROM}
 
-# Instalare dependințe
-RUN apk add --no-cache \
-    python3 \
-    py3-pip
+# Copiem scriptul de start
+COPY run.sh /etc/services.d/kroll/run
+RUN chmod +x /etc/services.d/kroll/run
 
-# Copierea fișierului de start
-COPY run.sh /run.sh
-RUN chmod +x /run.sh
-
-# Rularea scriptului de start
-CMD ["/run.sh"]
-
-RUN pip3 install requests
